@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,4 +140,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # status file config
 STATIC_URL = "/static/"
-STATICFILES_DIR = [str(BASE_DIR.joinpath('static'))]
+# STATICFILES_DIR = [str(BASE_DIR.joinpath('static'))]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
